@@ -67,3 +67,6 @@ table {
 #display, #display2, #display3, #makeBold, #display_error1, #display_error2 {
     font-weight: bold;
 }
+.small {
+    font-size: 80%;
+}
