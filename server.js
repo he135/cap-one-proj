@@ -25,17 +25,33 @@ app.get('/', (req, res) => {
 // Send listings.csv
 app.get('/listings', (req, res) => {
 	const listings = require('./listings.json'); // get json
-
-	// TODO probably should preprocess this data to minimize the size somehow
-	// Either in this function or modifying the actual json file
-	// Stripping the comments should be fine I think
-
-	//var display = listings[1].weekly_price;
-
-	//res.json(display); // test
 	res.json(listings); //send json
 })
 
+app.get('/style.css', (req, res) => {
+	// const style = require('./style.css');
+	res.sendFile(__dirname + '/style.css');
+})
+
+app.get('/func1.js',(req, res) => {
+	res.sendFile(__dirname + '/func1.js');
+})
+
+app.get('/map.js',(req, res) => {
+	res.sendFile(__dirname + '/map.js');
+})
+
+app.get('/func2.js',(req,res) => {
+	res.sendFile(__dirname + '/func2.js');
+})
+
+app.get('/func3.js',(req,res) => {
+	res.sendFile(__dirname + '/func3.js');
+})
+
+app.get('/popularity.js',(req,res) => {
+	res.sendFile(__dirname + '/popularity.js');
+})
 
 // Anything else => 404 error
 app.all('*', (req, res) => {
